@@ -1,0 +1,832 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Careers — Buford County Sheriff's Office</title>
+<meta name="description" content="Explore career opportunities with the Buford County Sheriff's Office.">
+<link rel="icon" href="badge.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* =============================================================
+   Buford County Sheriff's Office — Stylesheet
+   ============================================================= */
+
+:root {
+  --teal-950: #0a2120;
+  --teal-900: #0e2b2a;
+  --teal-800: #16403d;
+  --teal-700: #1c4a47;
+  --teal-600: #2f6560;
+  --gold-700: #a8790a;
+  --gold-600: #b8860b;
+  --gold-500: #cf9d1f;
+  --gold-300: #e6c467;
+  --ink: #1c231f;
+  --ink-soft: #4a534e;
+  --paper: #fbfaf6;
+  --line: #e2ddc9;
+  --shadow: 0 10px 30px rgba(14, 43, 42, 0.10);
+
+  --font-display: "Source Serif 4", "Cambria", Georgia, serif;
+  --font-body: "Public Sans", "Calibri", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: linear-gradient(160deg, #f4efdd 0%, #f8f6ee 28%, #eef2ef 62%, #e9efec 100%);
+  background-attachment: fixed;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+.container {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* -------------------------------------------------------------
+   Skip link / focus states
+   ------------------------------------------------------------- */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--teal-900);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  z-index: 999;
+  border-radius: 0 0 8px 0;
+}
+.skip-link:focus { left: 0; }
+
+:focus-visible {
+  outline: 2px solid var(--gold-600);
+  outline-offset: 2px;
+}
+
+/* -------------------------------------------------------------
+   Top bar (badge notice strip)
+   ------------------------------------------------------------- */
+.topbar {
+  background: var(--teal-950);
+  color: #cfe0da;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+}
+.topbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.topbar strong { color: var(--gold-300); font-weight: 600; }
+
+/* -------------------------------------------------------------
+   Primary navigation — logo centered between tab groups
+   ------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(251, 250, 246, 0.86);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0.7rem 0;
+  gap: 1rem;
+}
+
+.nav-group {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--teal-900);
+}
+.nav-group.left { justify-content: flex-end; }
+.nav-group.right { justify-content: flex-start; }
+
+.nav-group a {
+  position: relative;
+  padding: 0.3rem 0.1rem;
+  transition: color 0.15s ease;
+}
+.nav-group a:hover { color: var(--gold-700); }
+.nav-group a[aria-current="page"] { color: var(--gold-700); }
+.nav-group a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -6px;
+  height: 2px;
+  background: var(--gold-600);
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  text-align: center;
+  padding: 0 0.5rem;
+}
+.brand img { width: 46px; height: 46px; }
+.brand .brand-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--teal-900);
+  white-space: nowrap;
+}
+.brand .brand-tag {
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: var(--gold-700);
+  white-space: nowrap;
+}
+
+.nav-cta {
+  background: var(--teal-900);
+  color: #fff !important;
+  padding: 0.5rem 1.05rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.nav-cta:hover { background: var(--gold-600); color: var(--teal-950) !important; }
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  font-size: 1.1rem;
+  color: var(--teal-900);
+}
+
+@media (max-width: 780px) {
+  .nav { grid-template-columns: auto 1fr auto; position: relative; }
+  .nav-group { display: none; }
+  .nav-toggle { display: inline-flex; }
+  .brand { flex-direction: row; }
+  body.nav-open .nav-group {
+    display: flex;
+    position: static;
+    background: var(--paper);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.9rem 1.5rem;
+    gap: 0.9rem;
+    width: 100%;
+  }
+  body.nav-open .nav-group.left { order: 3; padding-bottom: 0.4rem; }
+  body.nav-open .nav-group.right { order: 4; padding-top: 0; border-top: 1px solid var(--line); }
+  body.nav-open .nav {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    flex-wrap: wrap;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    display: flex;
+    padding-bottom: 0.5rem;
+  }
+  body.nav-open .brand { order: 1; flex: 1; }
+  body.nav-open .nav-toggle { order: 2; }
+}
+
+/* -------------------------------------------------------------
+   Hero
+   ------------------------------------------------------------- */
+.hero {
+  position: relative;
+  padding: 5rem 0 4.5rem;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -20% -10% auto -10%;
+  height: 480px;
+  background: radial-gradient(60% 60% at 30% 20%, rgba(184,134,11,0.10), transparent 70%),
+              radial-gradient(50% 50% at 80% 10%, rgba(14,43,42,0.08), transparent 70%);
+  pointer-events: none;
+}
+.hero-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  align-items: center;
+}
+.eyebrow-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--teal-800);
+  background: rgba(184,134,11,0.10);
+  border: 1px solid rgba(184,134,11,0.35);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  margin-bottom: 1.25rem;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.3rem, 4.2vw, 3.4rem);
+  line-height: 1.08;
+  margin: 0 0 1.1rem;
+  color: var(--teal-950);
+}
+.hero .motto {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--gold-700);
+  margin: 0 0 1.4rem;
+}
+.hero p.lede {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  max-width: 46ch;
+  margin: 0 0 2rem;
+}
+.hero-actions { display: flex; gap: 0.9rem; flex-wrap: wrap; }
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.4rem;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  border: 1.5px solid transparent;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.btn-primary { background: var(--teal-900); color: #fff; }
+.btn-primary:hover { background: var(--gold-600); color: var(--teal-950); transform: translateY(-1px); }
+.btn-ghost { border-color: var(--teal-900); color: var(--teal-900); }
+.btn-ghost:hover { background: var(--teal-900); color: #fff; }
+
+.hero-badge-frame {
+  position: relative;
+  justify-self: center;
+  width: min(340px, 80%);
+}
+.hero-badge-frame::before {
+  content: "";
+  position: absolute;
+  inset: -10%;
+  border-radius: 50%;
+  background: radial-gradient(50% 50% at 50% 45%, rgba(184,134,11,0.16), transparent 70%);
+}
+.hero-badge-frame img { position: relative; width: 100%; filter: drop-shadow(0 18px 30px rgba(14,43,42,0.22)); }
+
+/* -------------------------------------------------------------
+   Section scaffolding
+   ------------------------------------------------------------- */
+section { padding: 4.5rem 0; }
+.section-tight { padding: 3rem 0; }
+.section-head { max-width: 62ch; margin-bottom: 2.5rem; }
+.section-head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 2.6vw, 2.2rem);
+  color: var(--teal-950);
+  margin: 0 0 0.6rem;
+}
+.section-head p { color: var(--ink-soft); margin: 0; font-size: 1.02rem; }
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--line) 20%, var(--line) 80%, transparent);
+  border: none;
+  margin: 0;
+}
+
+/* -------------------------------------------------------------
+   About / two-column
+   ------------------------------------------------------------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.about-grid .stat-row {
+  display: flex;
+  gap: 2.2rem;
+  margin-top: 1.8rem;
+}
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--gold-700);
+  display: block;
+}
+.stat-label { font-size: 0.82rem; color: var(--ink-soft); }
+
+.photo-card {
+  background: var(--teal-900);
+  border-radius: 6px;
+  padding: 2px;
+  box-shadow: var(--shadow);
+}
+.photo-card .inner {
+  border-radius: 5px;
+  border: 1px solid rgba(230, 196, 103, 0.35);
+  padding: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+  text-align: center;
+  color: #eef3f1;
+}
+.photo-card img { width: 108px; }
+.photo-card .quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+.photo-card .signature { color: var(--gold-300); font-weight: 600; letter-spacing: 0.02em; }
+
+/* -------------------------------------------------------------
+   Value pillars
+   ------------------------------------------------------------- */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+.pillar {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1.6rem 1.4rem;
+  box-shadow: var(--shadow);
+}
+.pillar .glyph {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--teal-900);
+  color: var(--gold-300);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+}
+.pillar h3 { font-size: 1.02rem; margin: 0 0 0.4rem; color: var(--teal-950); }
+.pillar p { margin: 0; font-size: 0.92rem; color: var(--ink-soft); }
+
+/* -------------------------------------------------------------
+   Sheriff message banner
+   ------------------------------------------------------------- */
+.message-banner {
+  background: linear-gradient(135deg, var(--teal-950), var(--teal-800));
+  color: #eef3f1;
+  border-radius: 10px;
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2.2rem;
+  align-items: center;
+}
+.message-banner img { width: 90px; }
+.message-banner blockquote {
+  margin: 0 0 1rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.65;
+}
+.message-banner cite {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--gold-300);
+}
+
+/* -------------------------------------------------------------
+   Cards (careers / command staff / info)
+   ------------------------------------------------------------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+.card .card-top {
+  background: var(--teal-900);
+  color: var(--gold-300);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.5rem 1.1rem;
+}
+.card .card-body { padding: 1.4rem 1.1rem 1.6rem; flex: 1; display: flex; flex-direction: column; }
+.card h3 { margin: 0 0 0.5rem; font-size: 1.08rem; color: var(--teal-950); }
+.card p { margin: 0; color: var(--ink-soft); font-size: 0.92rem; flex: 1; }
+.card .card-foot {
+  margin-top: 1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gold-700);
+}
+
+/* Staff cards */
+.staff-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1.8rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.staff-photo {
+  width: 84px; height: 84px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--teal-700), var(--teal-950));
+  display: flex; align-items: center; justify-content: center;
+}
+.staff-photo img { width: 52px; opacity: 0.92; }
+.staff-card h3 { margin: 0 0 0.2rem; font-size: 1.05rem; color: var(--teal-950); }
+.staff-card .rank { color: var(--gold-700); font-size: 0.82rem; font-weight: 700; margin-bottom: 0.4rem; }
+.staff-card .since { color: var(--ink-soft); font-size: 0.82rem; }
+.staff-card.vacant { opacity: 0.6; }
+.staff-card.vacant .staff-photo { background: #e9e5d4; }
+
+/* -------------------------------------------------------------
+   CTA band
+   ------------------------------------------------------------- */
+.cta-band {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 2.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  box-shadow: var(--shadow);
+}
+.cta-band h2 { font-family: var(--font-display); margin: 0 0 0.4rem; font-size: 1.5rem; color: var(--teal-950); }
+.cta-band p { margin: 0; color: var(--ink-soft); max-width: 48ch; }
+
+/* -------------------------------------------------------------
+   Page hero (interior pages)
+   ------------------------------------------------------------- */
+.page-hero {
+  padding: 3.6rem 0 2.6rem;
+  border-bottom: 1px solid var(--line);
+}
+.page-hero .eyebrow-badge { margin-bottom: 1rem; }
+.page-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.6vw, 2.8rem);
+  color: var(--teal-950);
+  margin: 0 0 0.7rem;
+}
+.page-hero p { color: var(--ink-soft); max-width: 60ch; margin: 0; font-size: 1.02rem; }
+
+/* -------------------------------------------------------------
+   Contact page
+   ------------------------------------------------------------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+.info-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem; }
+.info-list li { display: flex; gap: 0.9rem; }
+.info-list .glyph {
+  width: 36px; height: 36px; flex: none;
+  border-radius: 50%;
+  background: var(--teal-900);
+  color: var(--gold-300);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: 700; font-size: 0.85rem;
+}
+.info-list h4 { margin: 0 0 0.15rem; font-size: 0.95rem; color: var(--teal-950); }
+.info-list p { margin: 0; color: var(--ink-soft); font-size: 0.9rem; }
+
+.form-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+.form-row { margin-bottom: 1.1rem; display: flex; flex-direction: column; gap: 0.4rem; }
+.form-row label { font-size: 0.85rem; font-weight: 600; color: var(--teal-900); }
+.form-row input, .form-row select, .form-row textarea {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.65rem 0.8rem;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  background: var(--paper);
+}
+.form-row textarea { resize: vertical; min-height: 110px; }
+.form-note { font-size: 0.8rem; color: var(--ink-soft); margin-top: 0.8rem; }
+
+/* -------------------------------------------------------------
+   Footer
+   ------------------------------------------------------------- */
+.site-footer {
+  background: var(--teal-950);
+  color: #c7d6d0;
+  margin-top: 3rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 2.5rem;
+  padding: 3.2rem 0 2rem;
+}
+.footer-brand { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.9rem; }
+.footer-brand img { width: 42px; }
+.footer-brand span { font-family: var(--font-display); font-weight: 700; color: #fff; font-size: 1.05rem; }
+.site-footer h4 { color: #fff; font-size: 0.85rem; letter-spacing: 0.04em; margin: 0 0 1rem; }
+.site-footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.65rem; font-size: 0.9rem; }
+.site-footer a:hover { color: var(--gold-300); }
+.site-footer p { font-size: 0.9rem; color: #a9beb6; max-width: 40ch; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 1.1rem 0 1.6rem;
+  font-size: 0.78rem;
+  color: #90a49d;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* -------------------------------------------------------------
+   Responsive
+   ------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-badge-frame { order: -1; width: 200px; }
+  .about-grid { grid-template-columns: 1fr; }
+  .pillars { grid-template-columns: repeat(2, 1fr); }
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+  .message-banner { grid-template-columns: 1fr; text-align: center; }
+  .message-banner img { margin: 0 auto; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 620px) {
+  .pillars { grid-template-columns: 1fr; }
+  .card-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .cta-band { flex-direction: column; align-items: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; transition: none !important; }
+}
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="topbar">
+  <div class="container">
+    <span><strong>BCSO Dispatch:</strong> Channel active 24/7 in-game</span>
+    <span>"Integrity, Excellence, Fairness &amp; Respect"</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <nav class="nav container" aria-label="Primary">
+    <div class="nav-group left">
+      <a href="index.html">Home</a>
+      <a href="about.html">About BCSO</a>
+    </div>
+
+    <a class="brand" href="index.html">
+      <img src="badge.png" alt="Buford County Sheriff's Office badge">
+      <span class="brand-name">Buford County S.O.</span>
+      <span class="brand-tag">EST. HORIZON COUNTY</span>
+    </a>
+
+    <div class="nav-group right">
+      <a href="careers.html" aria-current="page">Careers</a>
+      <a href="contact.html">Contact</a>
+      <a class="nav-cta" href="#openings">Apply Now</a>
+    </div>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow-badge">Careers at BCSO</span>
+      <h1>Serve your community. Build your future.</h1>
+      <p>From the front line to specialized divisions, the Buford County Sheriff's Office offers a structured path for anyone ready to train hard and serve well.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2>Why choose BCSO</h2>
+        <p>A department built on realism and mentorship, not just a badge.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="glyph">1</div>
+          <h3>Real training</h3>
+          <p>A structured three-phase Academy, Field Training, and Patrol Observation program — not a rubber stamp.</p>
+        </div>
+        <div class="pillar">
+          <div class="glyph">2</div>
+          <h3>Clear advancement</h3>
+          <p>Defined ranks and specialized divisions with a visible path from Deputy to Command Staff.</p>
+        </div>
+        <div class="pillar">
+          <div class="glyph">3</div>
+          <h3>Mentorship</h3>
+          <p>Every Probationary Deputy is paired with a certified Training Instructor from day one.</p>
+        </div>
+        <div class="pillar">
+          <div class="glyph">4</div>
+          <h3>Camaraderie</h3>
+          <p>A department that trains, patrols, and grows together — on shift and off.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="openings" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head">
+        <h2>Career opportunities</h2>
+        <p>Current openings across patrol, corrections, and support roles.</p>
+      </div>
+      <div class="card-grid">
+
+        <div class="card">
+          <div class="card-top">FULL TIME</div>
+          <div class="card-body">
+            <h3>Deputy Sheriff</h3>
+            <p>Step into the front lines of law enforcement, protecting Buford County while building lifelong camaraderie with fellow Deputies. Your gateway to specialized divisions.</p>
+            <div class="card-foot">Entry point &middot; No experience required</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">FULL TIME</div>
+          <div class="card-body">
+            <h3>Sheriff Corporal</h3>
+            <p>Take the next step in leadership by guiding Deputies, fostering teamwork, and making a lasting impact while serving your community.</p>
+            <div class="card-foot">Requires Deputy tenure</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">PART TIME</div>
+          <div class="card-body">
+            <h3>Corrections Deputy</h3>
+            <p>Join the team at Buford County Penitentiary, ensuring safety and security in one of the most challenging and rewarding roles in law enforcement.</p>
+            <div class="card-foot">Open to part- &amp; full-time Deputies</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">PART TIME</div>
+          <div class="card-body">
+            <h3>Civil Matters</h3>
+            <p>Be the presence of order in the courtroom, ensuring safety during trials and proceedings while representing the strength and integrity of BCSO.</p>
+            <div class="card-foot">Part-time role for full-time Deputies</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">PART TIME</div>
+          <div class="card-body">
+            <h3>Field Training Officer</h3>
+            <p>Shape the future of BCSO by mentoring and training the next generation of Deputies, passing on your knowledge in this vital leadership role.</p>
+            <div class="card-foot">Available to part- &amp; full-time Deputies</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-top">SELF-PACED</div>
+          <div class="card-body">
+            <h3>Academy Phase</h3>
+            <p>Every application begins with the Academy Phase — remote instruction on SOPs, penal codes, radio procedure, and legal foundations, followed by a written exam.</p>
+            <div class="card-foot">Required before Phase II</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>Ready to apply?</h2>
+          <p>Reach out through our contact page or find a Recruiter on duty in-game to start your application.</p>
+        </div>
+        <a class="btn btn-primary" href="contact.html">Contact Recruiting</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-brand">
+        <img src="badge.png" alt="">
+        <span>Buford County S.O.</span>
+      </div>
+      <p>Official website of the Buford County Sheriff's Office. A Horizon Roleplay community department.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About BCSO</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="https://forms.gle/hosHaEN6hjh6NiJx9" target="_blank" rel="noopener">Commendation Form</a></li>
+        <li><a href="careers.html">Apply to BCSO</a></li>
+        <li><a href="contact.html">Non-Emergency Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>&copy; <span data-year></span> Buford County Sheriff's Office</span>
+    <span>Property of HorizonRP&reg; — for roleplay purposes only</span>
+  </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var toggle = document.querySelector(".nav-toggle");
+  if (toggle) {
+    toggle.addEventListener("click", function () {
+      var isOpen = document.body.classList.toggle("nav-open");
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+  }
+
+  var yearEl = document.querySelector("[data-year]");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+});
+
+</script>
+</body>
+</html>
