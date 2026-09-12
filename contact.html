@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Buford County Sheriff's Office</title>
+<meta name="description" content="Get in touch with the Buford County Sheriff's Office.">
+<link rel="icon" href="assets/badge.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<div class="topbar">
+  <div class="container">
+    <span><strong>BCSO Dispatch:</strong> Channel active 24/7 in-game</span>
+    <span>"Integrity, Excellence, Fairness &amp; Respect"</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <nav class="nav container" aria-label="Primary">
+    <div class="nav-group left">
+      <a href="index.html">Home</a>
+      <a href="about.html">About BCSO</a>
+    </div>
+
+    <a class="brand" href="index.html">
+      <img src="assets/badge.png" alt="Buford County Sheriff's Office badge">
+      <span class="brand-name">Buford County S.O.</span>
+      <span class="brand-tag">EST. HORIZON COUNTY</span>
+    </a>
+
+    <div class="nav-group right">
+      <a href="careers.html">Careers</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+      <a class="nav-cta" href="careers.html">Apply Now</a>
+    </div>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow-badge">Contact</span>
+      <h1>Get in touch with BCSO</h1>
+      <p>Questions about a call, a career, or a commendation? Reach out below — for anything in-progress or urgent, always use in-game dispatch first.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container contact-grid">
+      <div>
+        <ul class="info-list">
+          <li>
+            <div class="glyph">D</div>
+            <div>
+              <h4>In-Game Dispatch</h4>
+              <p>For active calls, traffic stops, or anything in progress, contact Dispatch directly in-game — this site is not monitored for emergencies.</p>
+            </div>
+          </li>
+          <li>
+            <div class="glyph">R</div>
+            <div>
+              <h4>Recruiting</h4>
+              <p>Interested in joining BCSO? Submit the form and a Recruiter or Training Instructor will follow up about the Academy Phase.</p>
+            </div>
+          </li>
+          <li>
+            <div class="glyph">C</div>
+            <div>
+              <h4>Commendations &amp; Complaints</h4>
+              <p>Recognize a Deputy's good work, or flag a concern for Command Staff review, using the appropriate form.</p>
+            </div>
+          </li>
+          <li>
+            <div class="glyph">P</div>
+            <div>
+              <h4>Press &amp; Community</h4>
+              <p>Media requests and community partnership inquiries are reviewed by the Sheriff's office directly.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="form-card">
+        <form onsubmit="event.preventDefault(); this.querySelector('.form-note').textContent='Thanks — this is a demo form. Wire it up to Formspree, Google Forms, or your own backend to receive messages.';">
+          <div class="form-row">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" required>
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+          <div class="form-row">
+            <label for="reason">Reason for contact</label>
+            <select id="reason" name="reason">
+              <option>Recruiting / Careers</option>
+              <option>Commendation</option>
+              <option>Complaint</option>
+              <option>Press / Community</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit" style="width:100%; text-align:center; border:none; cursor:pointer;">Send Message</button>
+          <p class="form-note">This form is a front-end demo and doesn't send anywhere yet — see the README for how to connect it.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-brand">
+        <img src="assets/badge.png" alt="">
+        <span>Buford County S.O.</span>
+      </div>
+      <p>Official website of the Buford County Sheriff's Office. A Horizon Roleplay community department.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About BCSO</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="https://forms.gle/hosHaEN6hjh6NiJx9" target="_blank" rel="noopener">Commendation Form</a></li>
+        <li><a href="careers.html">Apply to BCSO</a></li>
+        <li><a href="contact.html">Non-Emergency Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>&copy; <span data-year></span> Buford County Sheriff's Office</span>
+    <span>Property of HorizonRP&reg; — for roleplay purposes only</span>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
